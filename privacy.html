@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Yoga Pose Detection</title>
+        
+<header>
+    <nav class="navbar">
+      <div class="brand">FitVision Yoga</div>
+      <div class="buttons">
+        <button class="button" onclick="goToHomePage()">Home</button>
+      </div>
+    </nav>
+  </header>
+  
+<script>
+    function goToHomePage() {
+      window.location.href = "home.html";
+    }
+  </script>
+    <!-- Profile Update End -->
+    <style>
+   /* Navbar Styles */
+   header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: flex; /* Enable Flexbox */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Vertically center items */
+    padding: 15px 50px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .brand {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff7043;
+    text-transform: uppercase;
+  }
+  .buttons {
+    display: flex;
+    align-items: center; /* Center vertically */
+    margin: 0;
+  }
+  
+  .button {
+    width: 200px;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    background: #ff7043;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .button:hover {
+    background: #ff5722;
+  }
+
+/* Global Styles */
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9f4;
+}
+
+/* Header Styles */
+.container-fluid.bg-primary {
+    background: url('https://via.placeholder.com/1920x600?text=Yoga+Pose') no-repeat center center;
+    background-size: cover;
+    color: rgb(66, 231, 223);
+    text-align: center;
+    padding: 5rem 0;
+    position: relative;
+}
+
+.container-fluid.bg-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text visibility */
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Main Content Styles */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    animation: slideIn 1s ease-out;
+}
+
+h4 {
+    font-size: 1.75rem;
+    color: #0072ff;
+    margin-bottom: 1rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-fluid.bg-primary {
+        padding: 4rem 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid.bg-primary {
+        padding: 3rem 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+}
+
+/* Additional Styles */
+.text-primary {
+    color: #0072ff;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.box-shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background: #0072ff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #004d40, #00796b);
+    color: white;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 1rem;
+    min-width: 220px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-section:hover {
+    transform: translateY(-5px);
+}
+
+.footer-section h4 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ffffff;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section a {
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-section a:hover {
+    color: #80cbc4;
+}
+
+/* Social Links */
+.social-links a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+    font-size: 2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    color: #80cbc4;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    text-align: center;
+    border-top: 1px solid #00796b;
+}
+
+.footer-bottom p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: #80cbc4; /* Highlight the link */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s, transform 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background-color: #004d40;
+    transform: scale(1.15);
+}
+
+.back-to-top i {
+    margin: 0;
+    transition: transform 0.4s;
+}
+
+.back-to-top:hover i {
+    transform: rotate(180deg);
+}
+
+</style>    
+</head>
+<body>
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white">Yoga Pose Detection</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<div class="container">
+    <h2 class="mb-4">Yoga Pose Detection System</h2>
+    <div class="content">
+        <h4 class="mb-4">Introduction</h4>
+        <p class="mb-4">Welcome to the Yoga Pose Detection system, where we leverage advanced technologies to help you
+            improve your yoga practice by providing real-time feedback on your poses. Our system combines state-of-the-art
+            machine learning algorithms and computer vision to enhance your practice.</p>
+
+        <h4 class="mb-4">How It Works</h4>
+        <h5 class="mb-2">Pose Detection</h5>
+        <p class="mb-2">Our system uses sophisticated algorithms to analyze your yoga poses and provide feedback on your
+            alignment. It detects deviations from the ideal posture and suggests improvements to help you achieve better
+            results.</p>
+
+        <h5 class="mb-2">User Interaction</h5>
+        <p class="mb-2">Interact with our system through a user-friendly interface that displays real-time analysis of your
+            poses. Follow the on-screen instructions to make necessary adjustments and enhance your practice.</p>
+
+        <h5 class="mb-2">Data Privacy</h5>
+        <p class="mb-2">We are committed to protecting your privacy. All personal data collected during the use of the system
+            is handled securely and in line with our privacy policy. Your data is used solely to improve your experience.</p>
+
+        <h5 class="mb-2">Feedback and Support</h5>
+        <p class="mb-2">For any questions or support needs, please contact our support team. We are dedicated to assisting you
+            and ensuring you have a positive experience with our Yoga Pose Detection system.</p>
+
+        <p class="mb-4">By using our Yoga Pose Detection system, you agree to the terms outlined above. We wish you a
+            rewarding and enjoyable practice!</p>
+    </div>
+</div>
+
+<!-- Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p>We are committed to enhancing your yoga practice with innovative technology. Our Yoga Pose Detection system
+                is designed to provide real-time feedback and improve your overall experience.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: support@youryogasystem.com</p>
+            <p>Phone: 8237909500</p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Yoga Pose Detection System. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+</body>
+</html>

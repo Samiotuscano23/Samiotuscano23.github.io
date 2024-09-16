@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Poses</title>
+    <style>
+        /* Body Style with Background Image */
+        body {
+            background-image: url('images/image12.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #333;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Centered Header Style */
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Container Flexbox Layout */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Box Styling with Border and Shadow */
+        .box {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 300px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px); /* Blurs the background behind the box */
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Image Styling */
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                width: 80%;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .box {
+                width: 90%;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Yoga Poses: Learn the pose by clicking on it</h2>
+    <div class="container">
+        <div class="box">
+            <a href="https://www.yogajournal.com/poses/mountain-pose/" target="_blank">
+                <img src="/PoseCorrector/entryimage/mountain_pose.webp" alt="Mountain Pose">
+            </a>
+            <p>Mountain Pose</p>
+        </div>
+        <div class="box">
+            <a href="https://www.tummee.com/yoga-poses/goddess-pose" target="_blank">
+                <img src="/PoseCorrector/entryimage/goddess_pose.jpeg" alt="Goddess Pose">
+            </a>
+            <p>Goddess Pose</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <a href="https://www.yogajournal.com/poses/garland-pose/" target="_blank">
+                <img src="/PoseCorrector/entryimage/garland_pose.webp" alt="Garland Pose">
+            </a>
+            <p>Garland Pose</p>
+        </div>
+        <div class="box">
+            <a href="https://www.yogajournal.com/poses/plank-pose/" target="_blank">
+                <img src="/PoseCorrector/entryimage/plank_pose.webp" alt="Plank Pose">
+            </a>
+            <p>Plank Pose</p>
+        </div>
+    </div>
+    <div class="container">
+        <button onclick="window.location.href='index.html'">Start These Poses</button>
+    </div>
+</body>
+</html>

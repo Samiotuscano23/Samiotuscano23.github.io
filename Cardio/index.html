@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardio Section</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-image: url('assets/cardioimp.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 50px;
+            padding: 10px 0;
+            background-color: #148607;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-text {
+            margin-right: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid #4caf50;
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .module-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .module-item {
+            flex: 1 1 calc(25% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .module-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .module-image {
+            margin-bottom: 10px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .module-link {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4caf50;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .module-link:hover {
+            background-color: #45a049;
+        }
+
+        .app-download {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .app-download a {
+            margin-top: 10px;
+            padding: 15px 30px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .app-download a:hover {
+            background-color: #0056b3;
+        }
+
+        .cardio-app-button {
+            margin-top: 30px;
+            padding: 20px 30px;
+            background-color: #100f0f;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cardio-app-button:hover {
+            background-color: #e03a00;
+        }
+
+        @media (max-width: 768px) {
+            .module-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .container {
+                width: 95%;
+                margin-top: 60px;
+            }
+
+            .navbar {
+                padding: 5px 0;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .module-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-text">Cardio Section</div>
+    </div>
+
+    <div class="container">
+        <h1>Welcome To The Cardio Section</h1>
+
+        <div class="module-row">
+            <div class="module-item">
+                <img src="assets/squats.avif" alt="Squats" class="module-image" />
+                <a href="SquatsCounter/index.html" class="module-link">Squats Counter</a>
+            </div>
+
+            <div class="module-item">
+                <img src="assets/boxing.avif" alt="Boxing" class="module-image" />
+                <a href="BoxingChallenge/index.html" class="module-link">Boxing Challenge</a>
+            </div>
+
+            <div class="module-item">
+                <img src="assets/pushup.avif" alt="Push-up" class="module-image" />
+                <a href="Pushup/pushup.html" class="module-link">Push-up</a>
+            </div>
+
+            <div class="module-item">
+                <img src="assets/pullup.avif" alt="Pull-up" class="module-image" />
+                <a href="Pullup/pullup.html" class="module-link">Pull-up</a>
+            </div>
+        </div>
+
+        <div class="module-row">
+            <div class="module-item">
+                <img src="assets/skipping.png" alt="Skipping" class="module-image" />
+                <a href="Skipping/skipping.html" class="module-link">Skipping</a>
+            </div>
+
+            <div class="module-item">
+                <img src="assets/shoulder.jpeg" alt="Shoulderpress" class="module-image" />
+                <a href="Shoulderpress/shoulder.html" class="module-link">Shoulderpress</a>
+            </div>
+
+            <div class="module-item">
+                <img src="assets/lateral.jpeg" alt="Lateral Raises" class="module-image" />
+                <a href="LateralRaises/lraise.html" class="module-link">Lateral Raises</a>
+            </div>
+
+            <div class="module-item">
+                <img src="assets/jumping.jpeg" alt="Jumping Jacks" class="module-image" />
+                <a href="JumpingJacks/jj.html" class="module-link">Jumping Jacks</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

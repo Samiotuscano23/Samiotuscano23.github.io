@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="swc.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Gallery from Folder Demo</title>
+    <style type="text/css">
+        li {
+            list-style-type: none;
+            margin-right: 50px;
+            margin-bottom: 30px;
+            float: left;
+            box-shadow: 10px 10px 5px grey;
+        }
+    </style>
+</head>
+
+<body bgcolor="white">
+    <div>
+        <center><h1 style="color: black; font-family: Arial Black">Image Gallery</h1></center>
+
+        <ul>
+            <!-- Replace these with your actual image paths -->
+            <li>
+                <button onClick="selectImage('images/Bcurl.jpg')">
+                    <img src='images/Bcurl.jpg' width="350" height="350" />
+                    <br />
+                </button>
+            </li>
+            <li>
+                <button onClick="selectImage('images/lateralraise.jpg')">
+                    <img src='images/lateralraise.jpg' width="350" height="350" />
+                    <br />
+                </button>
+            </li>
+            <li>
+                <button onClick="selectImage('images/image3.jpg')">
+                    <img src='images/image3.jpg' width="350" height="350" />
+                    <br />
+                </button>
+            </li>
+            <!-- Add more images as needed -->
+        </ul>
+
+        <script src="imageSource.js"></script>
+        <script>
+            function selectImage(image) {
+                var imageName = image;
+                localStorage.setItem("imageSrc", image);
+                window.location.href = "camera.html";
+            }
+        </script>
+    </div>
+</body>
+</html>

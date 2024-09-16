@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual AI Yoga Coach</title>
+    <style>
+        /* Basic styling for video and feedback */
+        #camera {
+            display: block;
+            margin: 0 auto;
+        }
+        #feedback {
+            margin: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: green;
+        }
+        #canvas {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Virtual AI Yoga Coach</h1>
+    <video id="camera" width="640" height="480" autoplay></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <div id="feedback">Get Ready for Your Yoga Session</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+</body>
+</html>

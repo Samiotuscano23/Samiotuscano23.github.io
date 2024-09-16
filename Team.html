@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team - FitVision Yoga</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #90caf9, #ffcc80);
+      color: #333;
+    }
+
+    /* Navbar Styles */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1eb9d4;
+      text-transform: uppercase;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center; /* Center vertically */
+        margin: 0;
+      }
+      
+      .button {
+        width: 150px;
+        font-size: 18px;
+        padding: 15px;
+        border: none;
+        background: #1eb9d4;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+      
+      .button:hover {
+        background: #ff5722;
+      }
+      
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .content, .form-container {
+          padding: 20px;
+        }
+      
+        h1 {
+          font-size: 32px;
+        }
+      
+        .button {
+          width: 100%;
+          height: 100px;
+          font-size: 16px;
+        }
+      }
+
+    /* Header Section */
+    .header {
+      background-color: #35c8cb;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 80px; /* Space for the fixed navbar */
+      }
+
+    .header h1 {
+      font-size: 36px;
+    }
+
+    .breadcrumb {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .breadcrumb a {
+      color: white;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .breadcrumb .active {
+      color: #fff;
+    }
+
+    /* Team Section Styles */
+    .team-container {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 50px;
+      }
+      
+      
+
+    .team-item {
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      background: #fff;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .team-item img {
+        width: 100%;
+        height: 600px; /* Adjust the height as needed */
+        object-fit: cover;
+        border-bottom: 2px solid #ff7043;
+      }
+      .team-item {
+        position: relative; /* Ensure that the button positioning is relative to the team-item */
+      }
+      
+      .team-item .btn {
+        position: absolute;
+        bottom: 100px; /* Move the button a bit further down */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 10; /* Ensure the button is on top of the image */
+      }
+      
+      .team-item .btn a {
+        border-radius: 100%;
+        width: 45px; /* Slightly larger buttons */
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #2ddccd;
+        color: white;
+        transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+      }
+      
+      .team-item .btn a:hover {
+        background-color: #ff6131;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover for effect */
+      }
+      
+      .team-item .btn i {
+        font-size: 18px; /* Slightly larger icon for better visibility */
+      }
+      
+      /* Responsive Design Adjustments */
+      @media (max-width: 768px) {
+        .team-item .btn {
+          bottom: 10px; /* Adjust button position for smaller screens */
+        }
+      
+        .team-item .btn a {
+          width: 40px; /* Adjust button size */
+          height: 40px;
+        }
+      
+        .team-item .btn i {
+          font-size: 16px; /* Adjust icon size */
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .team-item .btn {
+          bottom: 5px; /* Further adjust for very small screens */
+        }
+      
+        .team-item .btn a {
+          width: 35px; /* Adjust button size */
+          height: 35px;
+        }
+      }
+      
+    .team-item h5 {
+      margin: 15px 0 5px;
+      color: #ff7043;
+      font-size: 18px;
+    }
+
+    .team-item small {
+      color: #777;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 28px;
+      }
+
+      .breadcrumb {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .team-item {
+        margin: 20px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="brand">FitVision Yoga</div>
+    </nav>
+  </header>
+
+  <!-- Header Start -->
+  <div class="header">
+    <h1>Our Team</h1>
+  </div>
+  <header>
+    <nav class="navbar">
+      <div class="brand">FitVision Yoga</div>
+      <div class="buttons">
+        <button class="button" onclick="goToHomePage()">Home</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Header End -->
+
+  <!-- Team Start -->
+  <div class="team-container">
+    <div class="team-grid">
+      <!-- Member 1 -->
+      <div class="team-item">
+        <img src="assets/Samio (2).jpeg" alt="Samio Tuscano">
+        <div class="btn">
+          <a href="https://www.linkedin.com/in/samio-tuscano-306aa1290/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:Samiotuscano123@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+          <a href="https://github.com/Samiotuscano2003" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <h5>Samio Tuscano</h5>
+        <small>Team Member</small>
+      </div>
+      <!-- Member 2 -->
+      <div class="team-item">
+        <img src="assets/Shawn.PNG" alt="Shawn Dsilva">
+        <div class="btn">
+          <a href="https://www.linkedin.com/in/shawn-pereira-93455b205/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:ShawnPereira2208@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+          <a href="https://github.com/shawnpereira" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <h5>Shawn Dsilva</h5>
+        <small>Team Member</small>
+      </div>
+      <!-- Member 3 -->
+      <div class="team-item">
+        <img src="assets/jeseel.png" alt="Jeseel">
+        <div class="btn">
+          <a href="https://www.linkedin.com/in/amey-thakur-0411b61b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:ameythakur.62@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+          <a href="https://github.com/AmeyThakur" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <h5>Jessel Ludrick</h5>
+        <small>Team Member</small>
+      </div>
+      <!-- Member 4 -->
+      <div class="team-item">
+        <img src="assets/Blaise.jpeg" alt="Blaise Dsilva">
+        <div class="btn">
+          <a href="https://www.linkedin.com/in/ruel-jonson-2023b5104/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:ruel.jonson@csmsscmd.edu.in" target="_blank"><i class="fa fa-envelope"></i></a>
+          <a href="https://github.com/ruel-jonson" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <h5>Blaise Dsilva</h5>
+        <small>Team Member</small>
+      </div>
+    </div>
+  </div>
+  <!-- Team End -->
+  <script>
+    function goToHomePage() {
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Contact - FitVision Yoga</title>
+
+  <!-- Google Font for styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #90caf9, #ffcc80);
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+/* Navbar Styles */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex; /* Enable Flexbox */
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Vertically center items */
+  padding: 15px 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff7043;
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: flex;
+  align-items: center; /* Center vertically */
+  margin: 0;
+}
+
+.button {
+  width: 200px;
+  font-size: 18px;
+  padding: 12px;
+  border: none;
+  background: #ff7043;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #ff5722;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .content, .form-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+
+    /* Hero Section */
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      opacity: 0.5;
+      object-fit: cover;
+    }
+
+ /* Content Styles */
+.content {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 40px 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: none; /* Remove max-width constraint */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Heading and Paragraph Styles */
+h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #ff7043;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 20px;
+    margin: 10px auto;
+    width: 100%; /* Ensure full width on small screens */
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+.form-container {
+  position: relative; /* To position the image relative to this container */
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  color: #333;
+  padding: 80px 40px 40px; /* Add extra padding at the top for the image */
+  width: 100%;
+  max-width: 600px;
+  margin: 120px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-container::before {
+  content: url('Contact.jpg'); /* Example image URL */
+  position: center;
+  top: 70px; /* Adjust based on image size and padding */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0.8; /* Slight transparency for a modern look */
+}
+
+
+/* Form Elements */
+input[type=text], input[type=email], textarea {
+  width: calc(100% - 30px); /* Adjust for padding */
+  padding: 15px;
+  margin: 12px 0;
+  border: 2px solid #ccc; /* Light gray border */
+  border-radius: 8px;
+  background: #ffffff; /* White background */
+  color: #333; /* Dark text for readability */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  background-color: #f9f9f9; /* Light gray background on focus */
+  border-color: #007bff; /* Blue accent color on focus */
+  outline: none;
+}
+
+input[type=submit] {
+  background-color: #007bff; /* Blue background for the button */
+  color: #fff; /* White text */
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input[type=submit]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* Contact Information Styles */
+.contact-info {
+  background: #f8f9fa; /* Light gray background for contrast */
+  color: #333; /* Dark text for readability */
+  padding: 20px; /* Add padding for space around content */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  max-width: 600px; /* Maintain max-width to align with form */
+  margin: 30px auto; /* Center horizontally and add margin around */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  text-align: center; /* Center text alignment */
+}
+
+.contact-info p {
+  font-size: 18px; /* Set font size for readability */
+  margin: 10px 0; /* Add margin for spacing between lines */
+}
+
+.contact-info strong {
+  color: #007bff; /* Accent color for the labels */
+  font-weight: 600; /* Make labels stand out */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .contact-info {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .contact-info p {
+    font-size: 16px; /* Slightly smaller text for mobile */
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <div class="brand">FitVision Yoga</div>
+  </nav>
+</header>
+
+<!-- Form Section -->
+<div class="form-container">
+  <form action="submit_contact.php" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name.." required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message.." style="height:200px" required></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<header>
+  <nav class="navbar">
+    <div class="brand">FitVision Yoga</div>
+    <div class="buttons">
+      <button class="button" onclick="goToHomePage()">Home</button>
+    </div>
+  </nav>
+</header>
+
+
+<!-- Content Section -->
+<div class="content">
+  <h1>Contact FitVision Yoga</h1>
+  <p>We would love to hear from you! Fill out the form below to get in touch and let us know how we can assist with your yoga journey.
+    <br>We’d love to hear from you! Please fill out the form below to reach out and let us know how we can support your yoga journey. Your feedback and inquiries are important to us.
+  </p>
+</div>
+
+<!-- Contact Information and Office Details -->
+<div class="contact-office-info">
+  <div class="contact-info">
+    <p>For immediate assistance, you can also reach us at:</p>
+    <p><strong>Phone:</strong> +91 73552 864824</p>
+  </div>>
+
+<script>
+  function goToHomePage() {
+    window.location.href = "home.html";
+  }
+</script>
+</body>
+</html>

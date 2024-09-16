@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('physical\ health.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover; /* Ensure the image covers the entire viewport */
+}
+
+.container {
+    max-width: 1000px; /* Increased width */
+    margin: 50px auto;
+    padding: 40px; /* Increased padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for contrast */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin */
+    color: #333;
+    font-size: 2.5rem; /* Larger font size */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around; /* Adjusted alignment */
+    margin-bottom: 30px; /* Increased margin */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.image-container img {
+    max-width: 45%; /* Increased size */
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 15px 30px; /* Increased padding */
+    margin: 15px;
+    font-size: 20px; /* Larger font size */
+    text-decoration: none;
+    background-color: #07c211;
+    color: #ffffff;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition */
+}
+
+.button-container a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Enhanced Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #1f1f1f, #343a40);
+    color: #ffffff;
+    padding: 4rem 1rem; /* Increased padding */
+    text-align: center;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 4rem; /* Increased margin */
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 2rem; /* Increased margin */
+    min-width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-section:hover {
+    transform: translateY(-5px);
+}
+
+.footer-section h4 {
+    color: #fb873f;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem; /* Increased font size */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #fb873f;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 0.5rem 0;
+    font-size: 1.1rem; /* Increased font size */
+    color: #cccccc;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section a:hover {
+    color: #fb873f;
+    text-decoration: none;
+}
+
+/* Social Links */
+.social-links a {
+    color: #ffffff;
+    margin: 0 0.75rem; /* Increased margin */
+    font-size: 2rem; /* Larger icon size */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    color: #fb873f;
+    transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid #495057;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 1rem; /* Slightly increased font size */
+    color: #aaaaaa;
+}
+
+.footer-bottom a {
+    color: #fb873f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #f57c00;
+    text-decoration: underline;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #fb873f;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 70px; /* Increased size */
+    height: 70px; /* Increased size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem; /* Larger icon */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s, transform 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background-color: #f57c00;
+    transform: scale(1.15);
+}
+
+.back-to-top i {
+    margin: 0;
+    transition: transform 0.4s;
+}
+
+.back-to-top:hover i {
+    transform: rotate(180deg);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-section {
+        margin: 1.5rem 0;
+    }
+
+    .back-to-top {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Meditation Img</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/cv_container.css">
+  </head>
+
+  <body>
+    <div class="preload">Initializing...</div>
+
+    <div class="content">
+
+      <!-- button to toggle instructions widget //-->
+      <div class="btn_more">View Instructions</div>
+        <ul id="instructions" class="collapsed">
+          <li>When prompted, allow chrome to access your webcam</li>
+          <li>Move your hands, make gestures; you will figure out the rest</li>
+          <li>This is a Chrome Experiment not tested or intended to support other browsers</li>
+        </ul>
+
+      <!-- metadata widget //-->
+      <div class="widget-meta" >
+        <div class="meta-wrapper">
+          <div class="title-desc">
+            Meditation Images <span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- photo slide //-->
+      <div id="slidercontainer" style="position: absolute; top: 90px; left: calc(50vw - 500px); background: rgba(220, 220, 220, .1); padding: 0; width: 1000px; height: 600px; overflow: hidden;">
+        <div id="slider" style="display: flex; width: 100%; height: 100%;">
+          <div id="img"></div>
+            <img src="img/med1.jpg" alt="" style="flex: 1 0 100%; width: 100%; height: 100%; object-fit: cover;" />
+            <img src="img/med2.jpg" alt="" style="flex: 1 0 100%; width: 100%; height: 100%; object-fit: cover;" />
+            <img src="img/med3.jpg" alt="" style="flex: 1 0 100%; width: 100%; height: 100%; object-fit: cover;" />
+            <img src="img/med4.jpg" alt="" style="flex: 1 0 100%; width: 100%; height: 100%; object-fit: cover;" />
+            <img src="img/med5.jpeg" alt="" style="flex: 1 0 100%; width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+    </div>
+    </div>
+    
+
+      <!-- for image processing, shows motion detection results //-->
+      <div id="cv_container">
+        <video id="webcam" autoplay="" width="100%" height="100%"></video>
+        <canvas id="canvas-source" width="320" height="340"></canvas>
+        <canvas id="canvas-blended" width="320" height="240"></canvas>
+
+        <div class="hotspot" id="area1">-</div>
+        <div class="hotspot" id="area2">-</div>
+      </div>
+
+    </div>
+
+    <script src='js/jquery3.1.1.js'></script>
+    <script src='js/wow.js'></script>
+    <script src="js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/hammer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/controls.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/cv.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

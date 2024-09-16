@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meditation Center - FitVision</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Meditation Center - Fitvision</h1>
+  </header>
+  <main>
+  <video id="video" width="768" height="576" autoplay></video>
+    <canvas id="canvas" width="768" height="576"></canvas>
+    <audio id="alarm" src="noise.mp3" preload="auto"></audio>
+  </main>
+  <div id="timer"></div>
+  <script src="detection.js"></script>
+  <script>
+    ;(async function () {
+      const frameRate = 60;
+      const timeStep = 1 / frameRate;
+      let countdownInterval;
+      let countdownTime;
+
+      const video = document.getElementById('video');
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+
+      const width = canvas.width;
+      const height = canvas.height;
+
+      let difference;
+      let threshold;
+      let rectangle;
+      let box;
+
+      async function setupVideo() {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: { width, height, frameRate }
+          });
+          video.srcObject = stream;
+          video.onloadedmetadata = event => {
+            video.play();
+            startCountdown();
+          }
+        } catch (error) {
+          console.error(error);
+        } finally {
+          requestAnimationFrame(loop);
+        }
+      }
+
+      function drawCrosshair(r) {
+        context.fillStyle = 'rgba(255, 255, 255, 1)';
+        context.strokeStyle = 'rgba(255, 255, 255, 1)';
+        context.setLineDash([2, 4]);
+        context.lineWidth = 2;
+
+        context.beginPath();
+        context.moveTo(r.x + r.w / 2, 0);
+        context.lineTo(r.x + r.w / 2, height);
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(0, r.y + r.h / 2);
+        context.lineTo(width, r.y + r.h / 2);
+        context.stroke();
+
+        context.beginPath();
+        context.arc(r.x + r.w / 2, r.y + r.h / 2, 4, 0, Math.PI * 2);
+        context.fill();
+      }
+
+      function drawBounds(r) {
+        context.globalCompositeOperation = 'overlay';
+
+        context.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        context.strokeStyle = 'rgba(255, 255, 255, 1)';
+        context.setLineDash([]);
+        context.lineWidth = 2;
+
+        context.fillRect(r.x, r.y, r.w, r.h);
+        context.strokeRect(r.x, r.y, r.w, r.h);
+
+        context.globalCompositeOperation = 'source-over';
+      }
+
+      function update() {
+        const data = getData(video);
+
+        if (!store.data) store.data = data;
+
+        difference = getDifference(data, store.data);
+        threshold = getThreshold(difference);
+        box = getBounds(difference, width, threshold);
+        rectangle = getAverageRectangle(box);
+
+        store.data = data;
+
+        if (rectangle.w > 0 && rectangle.h > 0) {
+          playAlarm();
+          resetCountdown();
+        }
+      }
+
+      function render() {
+        drawData(context, difference, 0, 0, width, height);
+        drawCrosshair(rectangle);
+        drawBounds(rectangle);
+      }
+
+      function loop(time) {
+        if (frameRate === 60) {
+          requestAnimationFrame(loop);
+        } else {
+          setTimeout(() => {
+            loop(performance.now());
+          }, timeStep * 1000);
+        }
+
+        update(time);
+        render(time);
+      }
+
+      function main() {
+        window.onload = setupVideo;
+        countdownTime = prompt("How Many Minutes you want to Meditate Today?(click cancel to start by default 30 Mins)");
+        if (countdownTime === null || isNaN(countdownTime) || countdownTime <= 0) {
+          countdownTime = 30;
+        }
+      }
+
+      main();
+
+      function playAlarm() {
+        const alarmSound = document.getElementById('alarm');
+        alarmSound.play();
+      }
+
+      function startCountdown() {
+        let countdown = countdownTime * 60;
+        countdownInterval = setInterval(() => {
+          const minutes = Math.floor(countdown / 60);
+          const seconds = countdown % 60;
+          document.getElementById('timer').innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+          countdown--;
+          if (countdown < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById('timer').innerText = '00:00';
+      
+            // Display success message
+            alert("Congratulations! You have successfully completed your meditation session.");
+          }
+        }, 1000);
+      }
+      
+
+      function resetCountdown() {
+        clearInterval(countdownInterval);
+        startCountdown();
+      }
+    })();
+  </script>
+</body>
+</html>

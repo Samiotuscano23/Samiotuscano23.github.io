@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITVISION Smart Yoga</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./src/index.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="brand">FITVISION SMART YOGA</div>
+                <div class="nav-links">
+                    <!-- <a href=" http://localhost:8081/">ChatBot</a> -->
+                    <a href="https://66e833c8d16ab541bb8f4a47--fitvision-chatbot.netlify.app/">ChatBot</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="Team.html">Team</a>
+                    <a href="index.html">Logout</a>
+
+                     <!-- Profile Image Link -->
+                     <a href="profile.html" class="profile-link">
+                        <img src="assets/Yoga.jpg" alt="Profile" class="profile-img"></a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="video-container">
+                <video src="assets/benefit.mp4" autoplay muted loop></video>
+            </div>
+            <div class="image-section">
+                <div class="image-tab">
+                    <img src="assets/image1.jpg" alt="Image 1" id="imageLink">
+                    <button id="button1">Pose detector</button>
+                </div>
+                
+                <div class="image-tab">
+                    <a href="PoseCorrector/entry.html">
+                        <img src="assets/image2.jpg" alt="Image 5">
+                    </a>
+                    <a href="PoseCorrector/entry.html">
+                        <button id="button2">Pose corrector</button>
+                    </a>
+                </div>
+                
+                <div class="image-tab">
+                    <a href="SEMS/index.html">
+                        <img src="assets/image5.jpg" alt="Image 5">
+                    </a>
+                    <a href="SEMS/index.html">
+                        <button id="button5">Cardio</button>
+                    </a>
+                    
+                </div>
+
+                <div class="image-tab">
+                    <a href="Fitvision/index.html">
+                        <img src="assets/medi.png" alt="Image 4">
+                    </a>
+                    <a href="Fitvision/index.html">
+                        <button id="button4">Meditation</button>
+                    </a>
+                </div>
+
+                <div class="image-tab">
+                    <a href="Physical-health/index.html">
+                        <img src="assets/image4.jpg" alt="Image 4">
+                    </a>
+                    <a href="Physical-health/index.html">
+                        <button id="button4">Physical-Health</button>
+                    </a>
+                </div>
+                
+                <div class="image-tab">
+                    <a href="mental-health/index.html">
+                        <img src="assets/image6.png" alt="Image 6">
+                    </a>
+                    <a href="mental-health/index.html">
+                        <button id="button6">Mental-Health</button>
+                    </a>
+                </div>                
+            </div>
+        </main>
+        
+    </div>
+    <script>
+        const button1 = document.getElementById('button1');
+    
+        button1.addEventListener('click', function() {
+            window.location.href = 'https://66e84f1cb4c20f1c3c28c37c--fitvision.netlify.app';
+        });
+    </script>
+    <div class="vision-mission-container">
+        <div class="vision-mission-content">
+            <div class="vision-section">
+                <div class="vision-text-and-image">
+                    <!-- First Image beside the text -->
+                    <img src="assets/Yoga pose detection.jpg" alt="Yoga Pose" class="vision-image">
+    
+                    <!-- Text content in the center -->
+                    <div class="vision-text">
+                        <h2>Our Vision</h2>
+                        <p>"Empowering wellness through technology by providing an intuitive and intelligent yoga pose detection system that enhances practice accuracy and personal growth."</p>
+                    </div>
+    
+                    <!-- Second Image beside the text -->
+                    <img src="assets/yoga imp.JPG" alt="Yoga Pose" class="vision-image">
+                </div>
+            </div>
+    
+            <div class="mission-section">
+                <div class="mission-text-and-image">
+                    <div class="mission-text">
+                        <h2>Our Mission</h2>
+                        <p>"Our mission is to create a cutting-edge yoga pose detection system that combines advanced computer vision and machine learning to offer real-time feedback and guidance. We aim to make yoga practice more accessible, accurate, and personalized, supporting practitioners of all levels in achieving their fitness and wellness goals."</p>
+                    </div>
+                    <img src="assets/Yoga pose.jpg" alt="Yoga Pose" class="mission-image">
+                </div>
+                 <!-- Second Image -->
+                 <img src="assets/yoga imp2.png" alt="Yoga Pose" class="mission-image">
+            </div>
+        </div>
+    </div>
+    
+<!-- FAQ End -->
+ <!-- Footer Start -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <p><a href="aboutus.html">About Us</a></p>
+            <p><a href="contact.html">Contact Us</a></p>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+            <p><a href="t&c.html">Terms & Condition</a></p>
+
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><i class="fa fa-map-marker-alt"></i> St Francis College of Engineering and Technology, Borivali</p>
+            <p><i class="fa fa-phone-alt"></i> +91 8237909500</p>
+            <p><i class="fa fa-envelope"></i> <a href="mailto:samiotuscano123@gmail.com">Samiotuscano123</a></p>
+            <div class="footer-section">
+                <p>Connect with us on social media</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-section">
+            <h4>Subscribe to our Newsletter</h4>
+            <p>Stay updated with the latest yoga tips, techniques, and exclusive offers. Enhance your yoga practice with personalized insights from our Yoga Pose Detection system</p>
+            <form action="#" method="POST">
+                <input type="email" placeholder="Enter Your Email" required>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; <a href="#">FITVISON Yoga</a>, All Right Reserved.</p>
+    </div>
+</div>
+<!-- Footer End -->
+    
+</body>
+</html>

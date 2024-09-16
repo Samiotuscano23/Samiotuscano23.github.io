@@ -1,0 +1,141 @@
+
+<title>PoseNet - Camera Feed </title>
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: black;
+    }
+
+    .footer-text {
+        max-width: 600px;
+        text-align: center;
+        margin: auto;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .footer-text, .dg {
+        display: none;
+      }
+    }
+	#output{
+	position: absolute;
+	
+	}
+	#LeftArm{
+	position:relative;
+	padding-top: 10px;
+	/* left:10px; */
+	top:20px;
+	float:right;
+	border: 3px solid rgb(0, 77, 128);
+	background-color: rgb(216, 216, 216);
+	}
+	#RightArm{
+	position:relative;
+	padding-top: 10px;
+	left:356px;
+	top:75px;
+	float:right;
+	border: 3px solid rgb(0, 77, 128);
+	background-color: rgb(216, 216, 216);
+	}
+	#LeftLeg{
+	position:relative;
+	padding-top: 10px;
+	left:712px;
+	top:131px;
+	float:right;
+	border: 3px solid rgb(0, 77, 128);
+	background-color: rgb(216, 216, 216);
+	
+	}
+	#RightLeg{
+	position:relative;
+	padding-top: 10px;
+	left:1060px;
+	top:200px;
+	float:right;
+	border: 3px solid rgb(0, 77, 128);
+	background-color: rgb(216, 216, 216);
+	
+	}
+	#cat1{
+		position :relative;
+		left:750px;
+		top:300px;
+		}
+	
+	#cat{
+		position :relative;
+		left:800px;
+		top:300px;
+		}
+	#poster{
+	position :relative;
+	left:20px;
+	top:720px;
+	float: bottom;
+	
+	}
+    </style>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="start()" background="img/bg.jpg">
+<div id="info" style='display:none'>
+    </div>
+    <div id="loading">
+        Loading the model...
+    </div>
+
+    <div id='main' style='display:none'>
+        <video id="video" playsinline style=" -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+		display:none
+        ">
+        </video>
+        <canvas id="output"/>
+		
+    </div>
+	<canvas id="LeftArm" width="350" height="40"></canvas>
+	<canvas id="RightArm" width="350" height="40"></canvas>
+	<canvas id="LeftLeg" width="350" height="40"></canvas>
+	<canvas id="RightLeg" width="350" height="40"></canvas>
+	<img id='cat1' src='' height="350" width="350" >
+	<img id='cat' style="display:none">
+	<br>
+	<canvas id="poster" height="500" width="500"></canvas>
+	
+	
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.2/build/dat.gui.js"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs@0.15.0"></script>
+    <script src="https://unpkg.com/@tensorflow-models/posenet@0.2.3"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="PoseCompare_mod.js"></script>
+	<script src="demo_util_webcam.js"></script>
+    <script src="stats.js"></script>
+    <script src="camera.js"></script>
+
+    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="ImageEst.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script> 
+
+<script>
+function start() {
+  var img=localStorage.imageSrc;
+  document.getElementById('cat1').src = img;
+  document.getElementById('cat').src = img;
+}
+</script>
+</body>
+
+</html>
